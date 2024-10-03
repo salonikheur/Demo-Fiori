@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+<Table id="suppliers" items="{/suppliers}" itemPress="onSupplierSelect">
+<headerToolbar>
+<Toolbar>
+<ToolbarSpacer/>
+<Button icon="sap-icon://filter" tooltip="Filter Suppliers" press="onFilterSupplier"/>
+</Toolbar>
+</headerToolbar>
+<columns>
+<Column>
+<header>
+<Label text="Name"/>
+</header>
+</Column>
+<Column>
+<header>
+<Label text="City"/>
+</header>
+</Column>
+<Column minScreenWidth="Tablet">
+<header>
+<Label text="Since When"/>
+</header>
+</Column>
+<Column minScreenWidth="Tablet" demandPopin="true">
+<header>
+<Label text="Contact"/>
+</header>
+</Column>
+</columns>
+<items>
+<ColumnListItem type="Navigation">
+<cells>
+<!--  Since we have 4 colums, for each column we have one cell, we will have 4 cell  -->
+<Text text="{name}"/>
+<Input value="{city}" showValueHelp="true" valueHelpRequest="onF4Help"/>
+<Text text="{sinceWhen}"/>
+<Text text="{person}"/>
+</cells>
+</ColumnListItem>
+</items>
+</Table>
+</core:FragmentDefinition>
